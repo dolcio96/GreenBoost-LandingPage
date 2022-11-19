@@ -22,6 +22,9 @@ import LogoGB from '@public/logoGB.png'
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 
+import { writefile } from '@lib/writeFile';
+
+
 const SocialButton = ({
   children,
   label,
@@ -103,6 +106,7 @@ const Footer = () => {
               />
               <IconButton
                 bg="primary"
+                onClick={writefile}
                 color={useColorModeValue('white', 'gray.800')}
                 _hover={{
                   bg: 'green.600',
