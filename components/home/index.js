@@ -8,6 +8,10 @@ import Phrase from "@components/phrase"
 
 import {
     Box,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
     Stack,
     SimpleGrid,
     Center,
@@ -17,14 +21,14 @@ import {
 
 
 
-const WaveComp = ({rotate}) => {
+const WaveComp = ({ rotate }) => {
     return (
         <div style={{ overflow: 'hidden' }}>
             <svg
                 preserveAspectRatio="none"
                 viewBox="0 0 1200 120"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{ fill: '#588157', width: '139%', height: '15vh', transform: rotate?"rotate(180deg)":"rotate(0deg)"}}
+                style={{ fill: '#588157', width: '139%', height: '15vh', transform: rotate ? "rotate(180deg)" : "rotate(0deg)" }}
             >
                 <path
                     d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
@@ -44,8 +48,6 @@ const WaveComp = ({rotate}) => {
 
 
 const Home = () => {
-
-
     return (
         <>
             <Box>
@@ -57,9 +59,9 @@ const Home = () => {
                     </Stack>
 
                 </Box>
-                <WaveComp/>
+                <WaveComp />
 
-                <Box my={25}>
+                <Box py={{ base: "20px", md: "40px" }}>
                     <HomeNav />
                 </Box>
                 <Box bg={"primary"}>
@@ -68,7 +70,7 @@ const Home = () => {
                         <Phrase text="Turn right and take with us the stairway to climate heaven." highlight={['']} />
                     </Stack>
                 </Box>
-                <WaveComp/>
+                <WaveComp />
                 <Box my={20}>
                     <DescriptionComponent />
                 </Box>
@@ -83,13 +85,14 @@ const Home = () => {
                     <TeamComponent />
                 </Box>
 
-                <WaveComp rotate={true}/>
+                <WaveComp rotate={true} />
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={24}>
                         <Phrase text="We are GreenBoost, we are an ecosystem, not just a marketplace." highlight={['ecosystem', 'marketplace']} />
                     </Stack>
                 </Box>
             </Box>
+
         </>
     )
 

@@ -13,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 import { useAnimation, motion } from "framer-motion"
 
-import { useRouter } from "next/router"
 import { FaLinkedin } from 'react-icons/fa';
 
 

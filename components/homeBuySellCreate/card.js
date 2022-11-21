@@ -1,5 +1,7 @@
 import React from 'react'
 import { useDisclosure } from '@chakra-ui/react'
+import LandingPopUp from '@components/landingPopUp';
+
 import {
     Box,
     Heading,
@@ -63,42 +65,8 @@ const Card = (props) => {
 
         </Flex>
 
+        <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
 
-        <Modal isOpen={isOpen} onClose={onClose} isCentered >
-            <ModalOverlay
-                backdropFilter='blur(3px) hue-rotate(50deg)'
-            />
-            <ModalContent >
-                <ModalHeader ustifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
-
-                <ModalBody>
-                    <Stack direction={'column'} spacing={6}>
-                        <Text>Send us your email if you are interested in the project</Text>
-                        <FormControl>
-                            <Input placeholder='Email' className="inputFieldNormal" />
-                        </FormControl>
-                        <Stack direction='row'>
-                            <Text>I want to</Text>
-                            <RadioGroup >
-                                <Stack direction='row'>
-                                    <Radio value='Seller'>Sell</Radio>
-                                    <Radio value='Buyer'>Buy</Radio>
-                                </Stack>
-                            </RadioGroup>
-                            <Text>Voluntary Carbon Credit</Text>
-
-                        </Stack>
-                    </Stack>
-                </ModalBody>
-                <ModalFooter justifyContent={"center"}>
-
-                    <Button variant={"normalButton"} mr={3} justifyContent={"center"}>
-                        Subscribe Now
-                    </Button>
-
-                </ModalFooter>
-            </ModalContent>
-        </Modal>
     </>)
 
 }

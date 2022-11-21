@@ -18,7 +18,6 @@ import {
 
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { useSession, signIn, signOut } from "next-auth/react"
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 const Links = ['About Us'];
@@ -30,7 +29,6 @@ import LogoGB from '@public/logoGB.png'
 
 const Nav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { data: session } = useSession()
 
     const [scrolled, setScrolled] = useState(false)
     useEffect(_ => {

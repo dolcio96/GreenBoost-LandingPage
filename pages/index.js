@@ -8,12 +8,12 @@ import HomeComponent from "@components/home"
 export default function Home() {
   return (
     <>
-        <Head
-          title="GreenBoost"
-          description="GreenBoost."
-        />
+      <Head
+        title="GreenBoost"
+        description="GreenBoost."
+      />
 
-        <HomeComponent/>
+      <HomeComponent />
     </>
   )
 }
@@ -28,12 +28,15 @@ export async function getServerSideProps(context) {
   // Fetch data from external API
   const email = context.query.email
   const type = context.query.type
-  var fs = require('fs');
+  if (email && type) {
+    var fs = require('fs');
 
-  fs.appendFile('mynewfile1.txt', 'email: '+ email + ' type:' + type+'\n', function (err) {
-    if (err) throw err;
-    console.log('Error');
-});
+    fs.appendFile('collected_emails.csv', email + '\t' + type + '\n', function (err) {
+      if (err) throw err;
+      console.log('Error');
+    });
+  }
 
-  return { props: {  } }
+
+  return { props: {} }
 }

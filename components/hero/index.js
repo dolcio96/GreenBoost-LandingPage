@@ -3,6 +3,7 @@ import { useDisclosure } from '@chakra-ui/react'
 import { useAnimation, motion } from "framer-motion"
 import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/router';
+import LandingPopUp from '@components/landingPopUp';
 
 import {
   Box,
@@ -36,31 +37,11 @@ import BackgroudImage from "@public/Images/heroForest2.jpg"
 
 const Hero = () => {
   const BGImage = BackgroudImage.src
+  
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const MotionText = motion(Text)
   const MotionStack = motion(Stack)
-
-  const router = useRouter();
-  const {
-    control,
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm()
-
-  function onSubmit(subscriber) {
-    console.log(subscriber)
-    return (router.push('/?email=' + subscriber.email + 'ferret&type=' + subscriber.type).then(() => {
-      isOpen = false
-      router.push('/')
-
-    })
-    );
-
-  }
-
-
 
   return (<>
     <Flex backgroundImage={BGImage}
@@ -160,55 +141,7 @@ const Hero = () => {
       </Container>
     </Flex>
 
-
-    <Modal isOpen={isOpen} onClose={onClose} isCentered >
-      <ModalOverlay
-        backdropFilter='blur(3px) hue-rotate(50deg)'
-      />
-      <ModalContent >
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <ModalHeader ustifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
-
-          <ModalBody>
-            <Stack direction={'column'} spacing={6}>
-            <Center><Text>Send us your email if you are interested in the project</Text>  </Center>
-              <FormControl isRequired>
-                <Input placeholder='Email' className="inputFieldNormal"  {...register('email')} />
-              </FormControl>
-              <Center>
-                <Stack direction='row'>
-                  <Text>I want to</Text>
-
-                  <Controller
-                    render={({ field: { onChange, value } }) => (
-
-                      <RadioGroup name='type' onChange={onChange} value={value}>
-                        <Stack direction='row'>
-                          <Radio value='seller'>Sell</Radio>
-                          <Radio value='buyer'>Buy</Radio>
-                        </Stack>
-                      </RadioGroup>
-
-                    )}
-                    name="type"
-                    control={control}
-                  />
-                  <Text>Voluntary Carbon Credit</Text>
-
-                </Stack>
-              </Center>
-            </Stack>
-          </ModalBody>
-          <ModalFooter justifyContent={"center"}>
-
-            <Button variant={"normalButton"} mr={3} justifyContent={"center"} type='submit'>
-              Subscribe Now
-            </Button>
-
-          </ModalFooter>
-        </form>
-      </ModalContent>
-    </Modal>
+    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
   </>)
 
 }

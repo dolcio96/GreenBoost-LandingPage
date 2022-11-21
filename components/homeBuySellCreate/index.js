@@ -40,14 +40,11 @@ const data = [{
 ]
 
 const HomeBuySellCreate = () => {
-    const MotionHeading = motion(Heading)
-
     return (<>
-
-
-        <Box py={{ base: "20px", md: "40px" }}>
+        <Box>
             <SimpleGrid columns={[1, 1, 1, 3]} gap={0}>
-                {data.map(e => <GridItem>
+                {data.map((e, i) =>
+                <GridItem key={i}>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -62,7 +59,6 @@ const HomeBuySellCreate = () => {
             </SimpleGrid>
         </Box>
     </>)
-
 }
 
 export default HomeBuySellCreate
