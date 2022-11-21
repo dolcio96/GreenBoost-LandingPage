@@ -61,12 +61,12 @@ const Team = () => {
                 {/*<Bubbles />*/}
 
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={10}>
-                    <TeamCard info={team.ludovico} />
-                    <TeamCard info={team.giovanni} />
-                    <TeamCard info={team.arturo} />
                     <TeamCard info={team.tommaso} />
+                    <TeamCard info={team.arturo} />
                     <TeamCard info={team.enrico} />
                     <TeamCard info={team.andrea} />
+                    <TeamCard info={team.ludovico} />
+                    <TeamCard info={team.giovanni} />
                 </SimpleGrid>
 
 s            </Stack>

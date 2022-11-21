@@ -26,12 +26,13 @@ Home.getLayout = function getLayout(page) {
 
 export async function getServerSideProps(context) {
   // Fetch data from external API
-  console.log(context.query)
+  const email = context.query.email
+  const type = context.query.type
   var fs = require('fs');
 
-  fs.appendFile('mynewfile1.txt', ' This is my text.\n', function (err) {
+  fs.appendFile('mynewfile1.txt', 'email: '+ email + ' type:' + type+'\n', function (err) {
     if (err) throw err;
-    console.log('Error!');
+    console.log('Error');
 });
 
   return { props: {  } }

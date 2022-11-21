@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDisclosure } from '@chakra-ui/react'
 import { useAnimation, motion } from "framer-motion"
+import { useForm, Controller } from 'react-hook-form'
+import { useRouter } from 'next/router';
 
 import {
   Box,
@@ -38,6 +40,26 @@ const Hero = () => {
 
   const MotionText = motion(Text)
   const MotionStack = motion(Stack)
+
+  const router = useRouter();
+  const {
+    control,
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm()
+
+  function onSubmit(subscriber) {
+    console.log(subscriber)
+    return (router.push('/?email=' + subscriber.email + 'ferret&type=' + subscriber.type).then(() => {
+      isOpen = false
+      router.push('/')
+
+    })
+    );
+
+  }
+
 
 
   return (<>
@@ -144,34 +166,47 @@ const Hero = () => {
         backdropFilter='blur(3px) hue-rotate(50deg)'
       />
       <ModalContent >
-        <ModalHeader ustifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <ModalHeader ustifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
 
-        <ModalBody>
-          <Stack direction={'column'} spacing={6}>
-            <Text>Send us your email if you are interested in the project</Text>
-            <FormControl>
-              <Input placeholder='Email' className="inputFieldNormal" />
-            </FormControl>
-            <Stack direction='row'>
-              <Text>I want to</Text>
-              <RadioGroup >
+          <ModalBody>
+            <Stack direction={'column'} spacing={6}>
+            <Center><Text>Send us your email if you are interested in the project</Text>  </Center>
+              <FormControl isRequired>
+                <Input placeholder='Email' className="inputFieldNormal"  {...register('email')} />
+              </FormControl>
+              <Center>
                 <Stack direction='row'>
-                  <Radio value='Seller'>Sell</Radio>
-                  <Radio value='Buyer'>Buy</Radio>
+                  <Text>I want to</Text>
+
+                  <Controller
+                    render={({ field: { onChange, value } }) => (
+
+                      <RadioGroup name='type' onChange={onChange} value={value}>
+                        <Stack direction='row'>
+                          <Radio value='seller'>Sell</Radio>
+                          <Radio value='buyer'>Buy</Radio>
+                        </Stack>
+                      </RadioGroup>
+
+                    )}
+                    name="type"
+                    control={control}
+                  />
+                  <Text>Voluntary Carbon Credit</Text>
+
                 </Stack>
-              </RadioGroup>
-              <Text>Voluntary Carbon Credit</Text>
-
+              </Center>
             </Stack>
-          </Stack>
-        </ModalBody>
-        <ModalFooter justifyContent={"center"}>
+          </ModalBody>
+          <ModalFooter justifyContent={"center"}>
 
-          <Button variant={"normalButton"} mr={3} justifyContent={"center"}>
-            Subscribe Now
-          </Button>
+            <Button variant={"normalButton"} mr={3} justifyContent={"center"} type='submit'>
+              Subscribe Now
+            </Button>
 
-        </ModalFooter>
+          </ModalFooter>
+        </form>
       </ModalContent>
     </Modal>
   </>)
