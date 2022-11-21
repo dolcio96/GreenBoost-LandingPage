@@ -77,7 +77,7 @@ const Home = () => {
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20}>
                         <Phrase text="Despite yesterday, we act today because of tomorrow." highlight={['']} />
-                        <Phrase text="  Offset our future, Together. " highlight={['Offset our future']} />
+                        <Phrase text="  Offset our future, together. " highlight={['Offset our future']} />
                     </Stack>
                 </Box>
                 <WaveComp />
