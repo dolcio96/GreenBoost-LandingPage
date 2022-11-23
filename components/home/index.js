@@ -53,7 +53,7 @@ const Home = () => {
             <Box>
                 <Hero />
                 <Box bg={"primary"} >
-                    <Stack spacing={5} py={20}>
+                    <Stack spacing={5} py={20} px={5}>
                         <Phrase text="Be part of our community, join GreenBoost marketplace." highlight={['community', 'marketplace']} />
                         <Phrase text="Reduce you carbon footprint through voluntary carbon credit market." highlight={['']} />
                     </Stack>
@@ -65,7 +65,7 @@ const Home = () => {
                     <HomeNav />
                 </Box>
                 <Box bg={"primary"}>
-                    <Stack spacing={5} py={20}>
+                    <Stack spacing={5} py={20} px={5}>
                         <Phrase text='"We are on a highway to climate hell."' highlight={['']} />
                         <Phrase text="Turn right and take with us the stairway to climate heaven." highlight={['']} />
                     </Stack>
@@ -75,7 +75,7 @@ const Home = () => {
                     <DescriptionComponent />
                 </Box>
                 <Box bg={"primary"}>
-                    <Stack spacing={5} py={20}>
+                    <Stack spacing={5} py={20} px={5}>
                         <Phrase text="Despite yesterday, we act today because of tomorrow." highlight={['']} />
                         <Phrase text="  Offset our future, together. " highlight={['Offset our future']} />
                     </Stack>
@@ -87,7 +87,7 @@ const Home = () => {
 
                 <WaveComp rotate={true} />
                 <Box bg={"primary"}>
-                    <Stack spacing={5} py={24}>
+                    <Stack spacing={5} py={20} px={5}>
                         <Phrase text="We are GreenBoost, we are an ecosystem, not just a marketplace." highlight={['ecosystem', 'marketplace']} />
                     </Stack>
                 </Box>

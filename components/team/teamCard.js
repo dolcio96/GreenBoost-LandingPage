@@ -57,7 +57,7 @@ const TeamCard = ({ info }) => {
                                 />
                             </Flex>
                             <Box>
-                                <Heading fontSize={'3xl'} fontWeight={500} fontFamily={'body'}>
+                                <Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
                                     {info.nome}
                                 </Heading>
                                 <Text color={'gray.500'} textAlign='center' fontSize={"lg"}>{info.role}</Text>

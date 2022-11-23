@@ -55,21 +55,11 @@ const Nav = () => {
                         <Box w={"200px"} as={"a"} href={"/"}>
                             <Image w={"100%"} src={LogoGB.src} />
                         </Box>
-
-                       
-
-
                     </HStack>
                     <Flex alignItems={'center'}>
-                      
+
                     </Flex>
                 </Flex>
-
-                {isOpen ? (
-                    <Box>
-                        
-                    </Box>
-                ) : null}
             </Box>
         </>
     );
