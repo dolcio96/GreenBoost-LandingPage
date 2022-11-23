@@ -50,7 +50,7 @@ const Nav = () => {
             <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} position="fixed" w="100%" zIndex={200}
                 backgroundColor={!scrolled ? "rgba(232, 232, 232, 0)" : "white"}
             >
-                <Flex h={16} alignItems={'center'} justifyContent={'center'} >
+                <Flex h={16} alignItems={'center'} justifyContent={'left'} >
                     <HStack spacing={8.} alignItems={'center'}>
                         <Box w={"200px"} as={"a"} href={"/"}>
                             <Image w={"100%"} src={LogoGB.src} />
