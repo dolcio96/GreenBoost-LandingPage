@@ -5,8 +5,8 @@ const nextConfig = {
     loader: "akamai",
     path: "/",
   },
-  basePath: "/GreenBoost-LandingPage",
-  assetPrefix: "/GreenBoost-LandingPage",
+  basePath: "/",
+  assetPrefix: "/",
 }
 
 module.exports = nextConfig
