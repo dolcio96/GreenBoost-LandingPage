@@ -83,6 +83,7 @@ const Home = () => {
                 <WaveComp />
                 <Box my={20}>
                 {/*    <TeamComponent /> */}
+                
                 </Box>
 
                 <WaveComp rotate={true} />
