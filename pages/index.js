@@ -39,4 +39,4 @@ Home.getLayout = function getLayout(page) {
 
 
 //   return { props: {} }
-// }
+// } 
