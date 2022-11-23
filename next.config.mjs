@@ -3,8 +3,8 @@
    */
  const nextConfig   = {
   images: {
-    loader: 'akamai',
-    path: '',
+    loader: 'default',
+    path: 'public/Images/',
   },
   assetPrefix: './',
 };
