@@ -49,34 +49,52 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
     const toast = useToast()
 
     function onSubmit(subscriber) {
+        const sgMail = require('@sendgrid/mail')
+        sgMail.setApiKey('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')
+        const msg = {
+            to: 'admin@greenboost.it', // Change to your recipient
+            from: 'admin@greenboost.it', // Change to your verified sender
+            subject: 'Sending with SendGrid is Fun',
+            text: 'and easy to do anywhere, even with Node.js',
+            html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+        }
+
         return (
-            fetch('/?email=' + subscriber.email + '&type=' + subscriber.type, {
-                method: "GET",
-              }).then(() => {
-                onClose()
-                toast({
-                    position: 'bottom-left',
-                    title: "Thank you!",
-                    description: "We've sent an email with other information.",
-                    status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-                    duration: 5000,
-                    isClosable: true,
-                })
-            }).catch(() => {
-                onClose()
-                toast({
-                    position: 'bottom-left',
-                    title: "Error!",
-                    description: "Something went wrong.",
-                    status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-                    duration: 5000,
-                    isClosable: true,
-                })
-            })
+            //fetch('/?email=' + subscriber.email + '&type=' + subscriber.type, {
+            // fetch('https://api.sendgrid.com/v3/mail/send', {
+            //     method: "POST",
+            //     headers: {
+            //         'Authorization': 'Bearer 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',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     mode: 'no-cors',
+            //     body: JSON.stringify({ "personalizations": [{ "to": [{ "email": "admin@greenboost.it" }] }], "from": { "email": "admin@greenboost.it" }, "subject": "Sending with SendGrid is Fun", "content": [{ "type": "text/plain", "value": "and easy to do anywhere, even with cURL" }] })
+
+            // }).then(() => {
+            //     onClose()
+            //     toast({
+            //         position: 'bottom-left',
+            //         title: "Thank you!",
+            //         description: "We've sent an email with other information.",
+            //         status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+            //         duration: 5000,
+            //         isClosable: true,
+            //     })
+            // }).catch(() => {
+            //     onClose()
+            //     toast({
+            //         position: 'bottom-left',
+            //         title: "Error!",
+            //         description: "Something went wrong.",
+            //         status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+            //         duration: 5000,
+            //         isClosable: true,
+            //     })
+            // })
+            true
         );
 
     }
-
 
     return (<>
 
@@ -86,7 +104,7 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
             />
             <ModalContent >
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <ModalHeader ustifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
+                    <ModalHeader justifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
 
                     <ModalBody>
                         <Stack direction={'column'} spacing={6}>
