@@ -52,35 +52,37 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
 
     function onSubmit(subscriber) {
 
-        const encoded = btoa('6e829994a400d025b0aca85afc867418','e15e4a44a8c0356e7dac1f777cb3fe3a')
-
         return (
             fetch('https://api.mailjet.com/v3.1/send', {
-                method:"POST",
+                method: "POST",
                 headers: {
-                  Authorization: 'Basic'+ {encoded},
-                  'Content-Type': 'application/json'
+                    'Authorization': 'Basic NDgzZGQ3ZjdmMTc0ODdlMzI0OTdmMGI2MjFkYmY3NDg6NGQ4ODU5MDViMGY0MzI1MzIxMDdhOWJhN2Q5YjQ4ZTU=',
+                    'Content-Type': 'application/json'
                 },
                 mode: 'no-cors',
-                body: JSON.stringify({
-                    "Messages":[
-                            {
-                                    "From": {
-                                            "Email": "admin@greenboost.it",
-                                            "Name": "Mailjet Pilot"
-                                    },
-                                    "To": [
-                                            {
-                                                    "Email": "admin@greenboost.it",
-                                                    "Name": "passenger 1"
-                                            }
-                                    ],
-                                    "Subject": "Your email flight plan!",
-                                    "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
-                                    "HTMLPart": "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
-                            }]
-              })})
-
+                body: '{"Messages":[{"From": {"Email": "admin@greenboost.it"},"To": [{"Email": "admin@greenboost.it"}],"Subject": "zxc","TextPart": "qwe","HTMLPart": "asd"}]}'
+            })
+                .then(() => {
+                    onClose()
+                    toast({
+                        position: 'bottom-left',
+                        title: "Thank you!",
+                        description: "We've sent an email with other information.",
+                        status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                        duration: 5000,
+                        isClosable: true,
+                    })
+                }).catch(() => {
+                    onClose()
+                    toast({
+                        position: 'bottom-left',
+                        title: "Error!",
+                        description: "Something went wrong.",
+                        status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                        duration: 5000,
+                        isClosable: true,
+                    })
+                })
             //fetch('/?email=' + subscriber.email + '&type=' + subscriber.type, {
             // fetch('https://api.sendgrid.com/v3/mail/send', {
             //     method: "POST",
