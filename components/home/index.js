@@ -51,6 +51,7 @@ const Home = () => {
     return (
         <>
             <Box>
+
                 <Hero />
                 <Box bg={"primary"} >
                     <Stack spacing={5} py={20} px={5}>
@@ -60,7 +61,6 @@ const Home = () => {
 
                 </Box>
                 <WaveComp />
-
                 <Box py={{ base: "20px", md: "40px" }}>
                     <HomeNav />
                 </Box>

@@ -38,6 +38,8 @@ import {
 
 const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
 
+
+
     const router = useRouter();
     const {
         control,
@@ -49,17 +51,36 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
     const toast = useToast()
 
     function onSubmit(subscriber) {
-        const sgMail = require('@sendgrid/mail')
-        sgMail.setApiKey('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')
-        const msg = {
-            to: 'admin@greenboost.it', // Change to your recipient
-            from: 'admin@greenboost.it', // Change to your verified sender
-            subject: 'Sending with SendGrid is Fun',
-            text: 'and easy to do anywhere, even with Node.js',
-            html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-        }
+
+        const encoded = btoa('6e829994a400d025b0aca85afc867418','e15e4a44a8c0356e7dac1f777cb3fe3a')
 
         return (
+            fetch('https://api.mailjet.com/v3.1/send', {
+                method:"POST",
+                headers: {
+                  Authorization: 'Basic'+ {encoded},
+                  'Content-Type': 'application/json'
+                },
+                mode: 'no-cors',
+                body: JSON.stringify({
+                    "Messages":[
+                            {
+                                    "From": {
+                                            "Email": "admin@greenboost.it",
+                                            "Name": "Mailjet Pilot"
+                                    },
+                                    "To": [
+                                            {
+                                                    "Email": "admin@greenboost.it",
+                                                    "Name": "passenger 1"
+                                            }
+                                    ],
+                                    "Subject": "Your email flight plan!",
+                                    "TextPart": "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
+                                    "HTMLPart": "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
+                            }]
+              })})
+
             //fetch('/?email=' + subscriber.email + '&type=' + subscriber.type, {
             // fetch('https://api.sendgrid.com/v3/mail/send', {
             //     method: "POST",
@@ -91,7 +112,6 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
             //         isClosable: true,
             //     })
             // })
-            true
         );
 
     }
