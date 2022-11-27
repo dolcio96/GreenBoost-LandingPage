@@ -5,7 +5,7 @@ import {
   Box,
   chakra,
   Container,
-  Link,
+  useDisclosure,
   Center,
   SimpleGrid,
   Stack,
@@ -15,14 +15,18 @@ import {
   IconButton,
   Image,
   useColorModeValue,
+  Button,
 } from '@chakra-ui/react';
 
 import LogoGB from '@public/logoGB.png'
 
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { BiMailSend } from 'react-icons/bi';
 
 import { writefile } from '@lib/writeFile';
+
+import LandingPopUp from '@components/landingPopUp';
+
 
 
 const SocialButton = ({
@@ -40,6 +44,7 @@ const SocialButton = ({
       cursor={'pointer'}
       as={'a'}
       href={href}
+      target={"_blank"}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
@@ -64,16 +69,17 @@ const ListHeader = ({ children }) => {
 };
 
 const Footer = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (<>
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '2fr 2fr' }}
+          templateColumns={{ base:'1fr', sm: '1fr ', md: '2fr 2fr' }}
           spacing={8}>
           <Stack spacing={6}>
-           
+
             <Box w={"70%"} as={"a"} href={"/"}>
               <Image src={LogoGB.src} color={useColorModeValue('gray.700', 'white')} />
             </Box>
@@ -81,45 +87,60 @@ const Footer = () => {
               © 2022 GreenBoost. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'} bgColor={"#00acee"}>
+              {/* <SocialButton label={'Twitter'} href={'#'} bgColor={"#00acee"}>
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'} bgColor={"#FF0000"}>
-                <FaYoutube />
+              <SocialButton label={'YouTube'} href={'https://www.linkedin.com/company/greenboost/'} bgColor={"#0077B5"}>
+                <FaLinkedin />
               </SocialButton>
+      
               <SocialButton label={'Instagram'} href={'#'} bgColor={"#E1306C"}>
                 <FaInstagram />
-              </SocialButton>
+              </SocialButton>*/}
             </Stack>
           </Stack>
-          
-          <Stack align={'flex-start'}>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={'row'}>
-              <Input
-                placeholder={'Your email address'}
-                bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-                border={0}
-                _focus={{
-                  bg: 'whiteAlpha.300',
-                }}
-              />
-              <IconButton
-                bg="primary"
-                onClick={writefile}
-                color={useColorModeValue('white', 'gray.800')}
-                _hover={{
-                  bg: 'green.600',
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
-          </Stack>
-          
+
+
+
+          <Center>
+            <Button
+
+              bg="primary"
+              onClick={onOpen}
+              color={useColorModeValue('white', 'gray.800')}
+              _hover={{
+                bg: 'gray.300',
+                color:'primary'
+              }}
+
+              rightIcon={<BiMailSend />}
+            >
+              Stay up to date
+            </Button>
+            <Text px={2}>or</Text>
+
+            <Button
+
+              bg="#0077B5"
+
+              as={"a"}
+              href={'https://www.linkedin.com/company/greenboost/'}
+              color={useColorModeValue('white', 'gray.800')}
+              _hover={{
+                bg: 'gray.300',
+                color:'#0077B5'
+              }}
+
+              rightIcon={<FaLinkedin />}
+            >
+              Contact us
+            </Button>
+
+          </Center>
         </SimpleGrid>
       </Container>
     </Box>
+    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
   </>)
 
 }

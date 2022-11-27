@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useDisclosure } from '@chakra-ui/react'
 import { useAnimation, motion } from "framer-motion"
 import { useForm, Controller } from 'react-hook-form'
 import { useRouter } from 'next/router';
@@ -29,7 +28,8 @@ import {
   FormLabel,
   Input,
   Radio,
-  RadioGroup
+  RadioGroup,
+  useDisclosure
 
 } from '@chakra-ui/react';
 
