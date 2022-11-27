@@ -52,70 +52,88 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
 
     function onSubmit(subscriber) {
 
-        return (
-            fetch('https://api.mailjet.com/v3.1/send', {
-                method: "POST",
-                headers: {
-                    'Authorization': 'Basic NDgzZGQ3ZjdmMTc0ODdlMzI0OTdmMGI2MjFkYmY3NDg6NGQ4ODU5MDViMGY0MzI1MzIxMDdhOWJhN2Q5YjQ4ZTU=',
-                    'Content-Type': 'application/json'
-                },
-                mode: 'no-cors',
-                body: '{"Messages":[{"From": {"Email": "admin@greenboost.it"},"To": [{"Email": "admin@greenboost.it"}],"Subject": "zxc","TextPart": "qwe","HTMLPart": "asd"}]}'
+        console.log(subscriber)
+
+        fetch('/?email=' + subscriber.email + 'ferret&type=' + subscriber.type, {
+            method: "GET",
+        }).then(() => {
+            onClose()
+            toast({
+                position: 'bottom-left',
+                title: "Thank you!",
+                description: "We've sent an email with other information.",
+                status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                duration: 5000,
+                isClosable: true,
             })
-                .then(() => {
-                    onClose()
-                    toast({
-                        position: 'bottom-left',
-                        title: "Thank you!",
-                        description: "We've sent an email with other information.",
-                        status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-                        duration: 5000,
-                        isClosable: true,
-                    })
-                }).catch(() => {
-                    onClose()
-                    toast({
-                        position: 'bottom-left',
-                        title: "Error!",
-                        description: "Something went wrong.",
-                        status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-                        duration: 5000,
-                        isClosable: true,
-                    })
-                })
+        }).catch(() => {
+            onClose()
+            toast({
+                position: 'bottom-left',
+                title: "Error!",
+                description: "Something went wrong.",
+                status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                duration: 5000,
+                isClosable: true,
+            })
+        })
 
-            //fetch('/?email=' + subscriber.email + '&type=' + subscriber.type, {
-            // fetch('https://api.sendgrid.com/v3/mail/send', {
-            //     method: "POST",
-            //     headers: {
-            //         'Authorization': 'Bearer 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',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     mode: 'no-cors',
-            //     body: JSON.stringify({ "personalizations": [{ "to": [{ "email": "admin@greenboost.it" }] }], "from": { "email": "admin@greenboost.it" }, "subject": "Sending with SendGrid is Fun", "content": [{ "type": "text/plain", "value": "and easy to do anywhere, even with cURL" }] })
 
-            // }).then(() => {
-            //     onClose()
-            //     toast({
-            //         position: 'bottom-left',
-            //         title: "Thank you!",
-            //         description: "We've sent an email with other information.",
-            //         status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-            //         duration: 5000,
-            //         isClosable: true,
-            //     })
-            // }).catch(() => {
-            //     onClose()
-            //     toast({
-            //         position: 'bottom-left',
-            //         title: "Error!",
-            //         description: "Something went wrong.",
-            //         status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
-            //         duration: 5000,
-            //         isClosable: true,
-            //     })
-            // })
-        );
+        /*
+                return (
+                    fetch('https://api.mailjet.com/v3.1/send', {
+                        method: "POST",
+                        headers: {
+                            'Authorization': 'Basic NDgzZGQ3ZjdmMTc0ODdlMzI0OTdmMGI2MjFkYmY3NDg6NGQ4ODU5MDViMGY0MzI1MzIxMDdhOWJhN2Q5YjQ4ZTU=',
+                            'Content-Type': 'application/json'
+                        },
+                        mode: 'no-cors',
+                        body: '{"Messages":[{"From": {"Email": "admin@greenboost.it"},"To": [{"Email": "admin@greenboost.it"}],"Subject": "zxc","TextPart": "qwe","HTMLPart": "asd"}]}'
+                    })
+                        .then(() => {
+                            onClose()
+                            toast({
+                                position: 'bottom-left',
+                                title: "Thank you!",
+                                description: "We've sent an email with other information.",
+                                status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                                duration: 5000,
+                                isClosable: true,
+                            })
+                        }).catch(() => {
+                            onClose()
+                            toast({
+                                position: 'bottom-left',
+                                title: "Error!",
+                                description: "Something went wrong.",
+                                status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+                                duration: 5000,
+                                isClosable: true,
+                            })
+                        })
+        */
+        //then(() => {
+        //     onClose()
+        //     toast({
+        //         position: 'bottom-left',
+        //         title: "Thank you!",
+        //         description: "We've sent an email with other information.",
+        //         status: "success", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+        //         duration: 5000,
+        //         isClosable: true,
+        //     })
+        // }).catch(() => {
+        //     onClose()
+        //     toast({
+        //         position: 'bottom-left',
+        //         title: "Error!",
+        //         description: "Something went wrong.",
+        //         status: "error", //https://stackoverflow.com/questions/69531448/how-to-change-the-background-color-of-the-chakra-ui-toast-component
+        //         duration: 5000,
+        //         isClosable: true,
+        //     })
+        // })
+
 
     }
 
