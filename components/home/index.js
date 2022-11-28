@@ -56,7 +56,7 @@ const Home = () => {
                 <Box bg={"primary"} >
                     <Stack spacing={5} py={20} px={5}>
                         <Phrase text="Be part of our community, join GreenBoost marketplace." highlight={['community', 'marketplace']} />
-                        <Phrase text="Reduce you carbon footprint through voluntary carbon credit market." highlight={['']} />
+                        <Phrase text="Reduce your carbon footprint through voluntary carbon credit market." highlight={['']} />
                     </Stack>
 
                 </Box>
