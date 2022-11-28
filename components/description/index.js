@@ -26,8 +26,8 @@ import leave from "@public/Images/icons/leave.svg"
 
 const MotionFlex = motion(Flex)
 const rows = {
-    row1: { title: "Easy and free access", description: "Access to the marketplace and offset your emissions in 3 easy clicks. We want to make our Marketplace accessible to everyone, in a very easy and autonomously way, with the will to make voluntary market grow as much as possible.", img: co2 },
-    row2: { title: "Carbon Credit supply gatherer", description: "We don’t choose you, you choose us! List your porjects on GreenBoost and become a member of our ecosystem. This will bring to the creation of a market with the greatest selection ever, where you can find every kind of VCC from all over the world.", img: forest },
+    row1: { title: "Easy and free access", description: "Access to the marketplace and offset your emissions in 3 easy clicks. We want to make our Marketplace accessible to everyone, in a very easy and autonomous way, with the will to make voluntary market grow as much as possible.", img: co2 },
+    row2: { title: "Carbon Credit supply gatherer", description: "We don’t choose you, you choose us! List your projects on GreenBoost and become a member of our ecosystem. This will bring to the creation of a market with the greatest selection ever, where you can find every kind of VCC from all over the world.", img: forest },
     row3: { title: "Build our zero CO2 future", description: "And that’s not all! GreenBoost wants to reinvest constantly in the development of new green projects, every year, to reduce CO2 emissions as much as we can. Our community will join us in this adventure, taking part in the choice of future projects and building our new ecosystem, together.", img: footprint },
 }
 
