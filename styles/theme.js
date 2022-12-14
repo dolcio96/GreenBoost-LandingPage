@@ -12,6 +12,12 @@ export const myTheme = extendTheme({
         warning: "#F2C57C"
     },
 
+    fonts: {
+        body: "SF Pro Display, sans-serif",
+        heading: "SF Pro Display, sans-serif",
+        text:"SF Pro Display, sans-serif",
+        mono: "Menlo, monospace",
+    },
 
     components: {
         Modal: {

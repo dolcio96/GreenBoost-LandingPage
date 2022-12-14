@@ -37,7 +37,7 @@ import BackgroudImage from "@public/Images/heroForest2.jpg"
 
 const Hero = () => {
   const BGImage = BackgroudImage.src
-  
+
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const MotionText = motion(Text)
@@ -79,7 +79,7 @@ const Hero = () => {
               Together.
             </MotionText>
           </Heading>
-          <MotionText borderRadius={"20px"} backgroundColor={"rgba(0, 0, 0, 0.8)"} color={{ base: 'white', sm: 'white' }} fontSize={{ base: "lg", sm: "2xl" }}
+          <MotionText borderRadius={"20px"} backgroundColor={"primary"} color={{ base: 'white', sm: 'white' }} fontSize={{ base: "lg", sm: "2xl" }}
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -117,6 +117,7 @@ const Hero = () => {
 
             </Button>
             <Box>
+              {/*
               <Icon
                 as={Arrow}
                 color={"white"}
@@ -135,13 +136,14 @@ const Hero = () => {
                 transform={'rotate(10deg)'}>
                 Subscribe now!
               </Text>
+               */}
             </Box>
           </MotionStack>
         </Stack>
       </Container>
     </Flex>
 
-    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
   </>)
 
 }
