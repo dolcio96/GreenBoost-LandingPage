@@ -66,8 +66,7 @@ const Home = () => {
                 </Box>
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20} px={5}>
-                        <Phrase text='"We are on a highway to climate hell."' highlight={['']} />
-                        <Phrase text="Turn right and take with us the stairway to climate heaven." highlight={['']} />
+                        <Phrase  text='Greenboost will help you offsetting emissions of the processes that are most difficult to decarbonize, with a verifiable product that guarantees CO2 removal from the atmosphere.' highlight={['']} />
                     </Stack>
                 </Box>
                 <WaveComp />

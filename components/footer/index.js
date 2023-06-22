@@ -84,7 +84,7 @@ const Footer = () => {
               <Image src={LogoGB.src} color={useColorModeValue('gray.700', 'white')} />
             </Box>
             <Text fontSize={'sm'}>
-              © 2022 GreenBoost. All rights reserved
+              © 2023 GreenBoost. All rights reserved
             </Text>
             <Stack direction={'row'} spacing={6}>
               {/* <SocialButton label={'Twitter'} href={'#'} bgColor={"#00acee"}>
