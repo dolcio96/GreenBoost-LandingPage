@@ -20,8 +20,8 @@ const team = {
     ludovico: { nome: "Ludovico Dolcini", role: "Frontend Developer", desc: "descrizione", linkedin: "https://www.linkedin.com/in/ldolcini/", img: LudovicoAvatar },
     giovanni: { nome: "Giovanni Misso", role: "Backend Developer", desc: "descrizione", linkedin: "https://www.linkedin.com/in/giovannimisso/", img: GiovanniAvatar },
     arturo: { nome: "Arturo Sorgato", role: "CPO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/arturo-sorgato-555b05215/", img: ArturoAvatar },
-    tommaso: { nome: "Tommaso Marinelli", role: "CEO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/tommaso-marinelli1/", img: TommasoAvatar },
-    enrico: { nome: "Enrico Martini", role: "CSO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/enrico-martini-070696/", img: EnricoAvatar },
+    tommaso: { nome: "Tommaso Marinelli", role: "CSO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/tommaso-marinelli1/", img: TommasoAvatar },
+    enrico: { nome: "Enrico Martini", role: "CEO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/enrico-martini-070696/", img: EnricoAvatar },
     andrea: { nome: "Andrea Corini", role: "COO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/andrea-corini-131634129/", img: AndreaAvatar },
 }
 
