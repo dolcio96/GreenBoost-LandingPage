@@ -86,7 +86,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.5, ease: [0, 0.71, 0.2, 1.01] }}
             p='10px'
           >
-            Take part to the green revolution and help us build a new ecosystem, a better one, with zero emissions.
+            Take part to the green revolution and help us build a new ecosystem, a better one, with zero impact.
 
           </MotionText>
           <MotionStack
