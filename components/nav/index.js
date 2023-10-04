@@ -75,7 +75,7 @@ const Nav = () => {
 
                     >
                    
-                         Stay tuned
+                         Rimani aggiornato
 
                     </Button> : ""}
                 </Flex>
