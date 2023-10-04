@@ -11,7 +11,7 @@ import { useAnimation, motion } from "framer-motion"
 
 import LudovicoAvatar from "@public/Images/team/ludovico.jpg"
 import GiovanniAvatar from "@public/Images/team/giovanni.jpeg"
-import EnricoAvatar from "@public/Images/team/test.jpeg"
+import EnricoAvatar from "@public/Images/team/enrico.jpeg"
 import ArturoAvatar from "@public/Images/team/arturo.jpeg"
 import AndreaAvatar from "@public/Images/team/andrea.jpg"
 import TommasoAvatar from "@public/Images/team/tommaso.jpg"
