@@ -16,14 +16,7 @@ import ArturoAvatar from "@public/Images/team/arturo.jpeg"
 import AndreaAvatar from "@public/Images/team/andrea.jpg"
 import TommasoAvatar from "@public/Images/team/tommaso.jpg"
 
-const team = {
-    ludovico: { nome: "Ludovico Dolcini", role: "Frontend Developer", desc: "descrizione", linkedin: "https://www.linkedin.com/in/ldolcini/", img: LudovicoAvatar },
-    giovanni: { nome: "Giovanni Misso", role: "Backend Developer", desc: "descrizione", linkedin: "https://www.linkedin.com/in/giovannimisso/", img: GiovanniAvatar },
-    arturo: { nome: "Arturo Sorgato", role: "CPO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/arturo-sorgato-555b05215/", img: ArturoAvatar },
-    tommaso: { nome: "Tommaso Marinelli", role: "CSO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/tommaso-marinelli1/", img: TommasoAvatar },
-    enrico: { nome: "Enrico Martini", role: "CEO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/enrico-martini-070696/", img: EnricoAvatar },
-    andrea: { nome: "Andrea Corini", role: "COO", desc: "descrizione", linkedin: "https://www.linkedin.com/in/andrea-corini-131634129/", img: AndreaAvatar },
-}
+
 
 const Bubbles = () => {
     const rows = []
@@ -39,7 +32,16 @@ const Bubbles = () => {
     </>)
 }
 
-const Team = () => {
+const Team = ({teamTexts}) => {
+
+    const team = {
+        ludovico: { nome: teamTexts.components.ludovico.name, role: teamTexts.components.ludovico.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/ldolcini/", img: LudovicoAvatar },
+        giovanni: { nome: teamTexts.components.giovanni.name, role: teamTexts.components.giovanni.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/giovannimisso/", img: GiovanniAvatar },
+        arturo: { nome: teamTexts.components.arturo.name, role: teamTexts.components.arturo.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/arturo-sorgato-555b05215/", img: ArturoAvatar },
+        tommaso: { nome: teamTexts.components.tommaso.name, role: teamTexts.components.tommaso.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/tommaso-marinelli1/", img: TommasoAvatar },
+        enrico: { nome: teamTexts.components.enrico.name, role: teamTexts.components.enrico.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/enrico-martini-070696/", img: EnricoAvatar },
+        andrea: { nome: teamTexts.components.andrea.name, role: teamTexts.components.andrea.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/andrea-corini-131634129/", img: AndreaAvatar },
+    }
     const MotionHeading = motion(Heading)
     return (
         <>
@@ -54,7 +56,7 @@ const Team = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
                 >
-                    <Center>GreenBoost Team</Center>
+                    <Center>{teamTexts.title}</Center>
                 </MotionHeading>
                 {/*<Bubbles />*/}
 

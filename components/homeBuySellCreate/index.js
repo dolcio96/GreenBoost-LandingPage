@@ -19,28 +19,29 @@ import imageCreate from "@public/Images/imageCreate.jpg"
 import Card from "@components/homeBuySellCreate/card";
 
 const data = [{
-    title: "BUY",
+    title: "COMPRA",
     img: imageBuy,
     lk: "/projects",
-    desc: "One place to find them all"
+    desc: "Acquista Crediti certificati secondo i migliori standard"
 },
 {
-    title: "SELL",
+    title: "VENDI",
     img: imageSell,
     lk: "/sell",
-    desc: "One place to sell them"
+    desc: "Sviluppa nuove opportunità di mercato grazie ai Crediti di Carbonio"
 },
 {
-    title: "CREATE",
+    title: "CREA",
     img: imageCreate,
     lk: "/create",
-    desc: "One place to \"rule\" them, with infos and guidelines"
+    desc: "Accellera il processo di certificazione del tuo progetto Carbon Removal"
 
 },
 ]
 
-const HomeBuySellCreate = () => {
+const HomeBuySellCreate = ({cardTexts,popUpTexts}) => {
     return (<>
+
         <Box>
             <SimpleGrid columns={[1, 1, 1, 3]} gap={0}>
                 {data.map((e, i) =>
@@ -53,7 +54,7 @@ const HomeBuySellCreate = () => {
                         <Center>
                             <Text fontSize='3xl' fontWeight={"bold"}>{e.title}</Text><Text fontWeight={"bold"} fontSize='2xl' color='green.400'> .</Text>
                         </Center>
-                        <Card {...e} />
+                        <Card popUpTexts={popUpTexts} props={e} />
                     </motion.div>
                 </GridItem>)}
             </SimpleGrid>

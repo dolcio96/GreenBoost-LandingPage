@@ -33,15 +33,20 @@ import {
 
 } from '@chakra-ui/react';
 
-import BackgroudImage from "@public/Images/heroForest2.jpg"
+//import BackgroudImage from "@public/Images/heroForest2.jpg"
+import BackgroudImage from "@public/Images/torbiere1.jpg"
+import LogoGB from '@public/logoGB.png'
 
-const Hero = () => {
+const Hero = ({heroTexts, popUpTexts}) => {
+
   const BGImage = BackgroudImage.src
+  const LogoImage = LogoGB.src
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const MotionText = motion(Text)
   const MotionStack = motion(Stack)
+  const MotionImage = motion(Image)
 
   return (<>
     <Flex backgroundImage={BGImage}
@@ -64,20 +69,30 @@ const Hero = () => {
             color={'quaternary'}
 
           >
-            <MotionText color={'quaternary'} textShadow='2px 2px #588157'
+            <MotionImage src = {LogoImage} textShadow='2px 2px #588157'
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01]
+              
+              
+              }}/>
+            <MotionText color={'primary'} 
+              textShadow='2px 2px #344E41'
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 1, ease: [0, 0.71, 0.2, 1.01]}}
             >
-              Offset our future.</MotionText>
-            <MotionText as={'span'} color={'primary'} textShadow='2px 2px #344E41'
+              {heroTexts.title}
+              {/*Offset our future.*/}</MotionText>
+            {/*<MotionText as={'span'} color={'primary'} textShadow='2px 2px #344E41'
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 2, delay: 1, ease: [0, 0.71, 0.2, 1.01] }}>
               Together.
-            </MotionText>
+            </MotionText>*/}
           </Heading>
           <MotionText borderRadius={"20px"} backgroundColor={"primary"} color={{ base: 'white', sm: 'white' }} fontSize={{ base: "lg", sm: "2xl" }}
             initial={{ opacity: 0, scale: 0.5 }}
@@ -86,7 +101,8 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1.5, ease: [0, 0.71, 0.2, 1.01] }}
             p='10px'
           >
-            Take part to the green revolution and help us build a new ecosystem, a better one, with zero impact.
+            {heroTexts.description}
+          {/*   Take part to the green revolution and help us build a new ecosystem, a better one, with zero impact.*/}
 
           </MotionText>
           <MotionStack
@@ -113,7 +129,8 @@ const Hero = () => {
               _focus={{ outline: "none" }}
 
             >
-              Stay tuned
+              {heroTexts.buttonSubscribe}
+             {/* Stay tuned*/}
 
             </Button>
             <Box>
@@ -143,7 +160,7 @@ const Hero = () => {
       </Container>
     </Flex>
 
-    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+    <LandingPopUp popUpTexts={popUpTexts} isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
   </>)
 
 }

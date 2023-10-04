@@ -5,6 +5,7 @@ import HomeNav from "@components/homeBuySellCreate"
 import TeamComponent from "@components/team"
 import DescriptionComponent from "components/description"
 import Phrase from "@components/phrase"
+import languageJSON from "@lib/language.json"
 
 import {
     Box,
@@ -48,46 +49,56 @@ const WaveComp = ({ rotate }) => {
 
 
 const Home = () => {
+   var language = languageJSON.IT;
+   //console.log(language);
     return (
         <>
             <Box>
 
-                <Hero />
+                <Hero heroTexts={language.hero} popUpTexts={language.popUp}/>
                 <Box bg={"primary"} >
                     <Stack spacing={5} py={20} px={5}>
-                        <Phrase text="Be part of our community, join GreenBoost marketplace." highlight={['community', 'marketplace']} />
-                        <Phrase text="Reduce your carbon footprint through voluntary carbon credit market." highlight={['']} />
+                        <Phrase  text={language.wave.wave1.phrase1} highlight={[language.wave.wave1.phrase1]}/>
+                        <Phrase  text={language.wave.wave1.phrase2} highlight={[]}/>
+                      {/*  <Phrase text="Be part of our community, join GreenBoost marketplace." highlight={['community', 'marketplace']} />*/}
+                      {/* <Phrase text="Reduce your carbon footprint through voluntary carbon credit market." highlight={['']} />*/ }
                     </Stack>
 
                 </Box>
                 <WaveComp />
                 <Box py={{ base: "20px", md: "40px" }}>
-                    <HomeNav />
+                    <HomeNav cardTexts= {language.sellbuycreate} popUpTexts={language.popUp}/>
                 </Box>
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20} px={5}>
-                        <Phrase  text='Greenboost will help you offsetting emissions of the processes that are most difficult to decarbonize, with a verifiable product that guarantees CO2 removal from the atmosphere.' highlight={['']} />
+                    <Phrase  text={language.wave.wave2.phrase1} highlight={['strategia di compensazione','obbiettivi di decarbonizzazione']}/>
+                    
+                       { /*<Phrase  text='Greenboost will help you offsetting emissions of the processes that are most difficult to decarbonize, with a verifiable product that guarantees CO2 removal from the atmosphere.' highlight={['']} />*/}
                     </Stack>
                 </Box>
                 <WaveComp />
                 <Box my={20}>
-                    <DescriptionComponent />
+                    <DescriptionComponent sectionText={language.section} />
                 </Box>
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20} px={5}>
-                        <Phrase text="Despite yesterday, we act today because of tomorrow." highlight={['']} />
-                        <Phrase text="  Offset our future, together. " highlight={['Offset our future']} />
+
+                    <Phrase  text={language.wave.wave3.phrase1} highlight={['oggi']}/>
+                    <Phrase  text={language.wave.wave3.phrase2} highlight={['insieme']}/>
+                     {/*   <Phrase text="Despite yesterday, we act today because of tomorrow." highlight={['']} />
+                        <Phrase text="  Offset our future, together. " highlight={['Offset our future']} />*/} 
                     </Stack>
                 </Box>
                 <WaveComp />
                 <Box my={20}>
-                    <TeamComponent />
+                    <TeamComponent teamTexts={language.team}/>
                 </Box>
 
                 <WaveComp rotate={true} />
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20} px={5}>
-                        <Phrase text="We are GreenBoost, we are an ecosystem, not just a marketplace." highlight={['ecosystem', 'marketplace']} />
+                    <Phrase  text={language.wave.wave4.phrase1} highlight={['GreenBoost']}/>
+                     {/*   <Phrase text="We are GreenBoost, we are an ecosystem, not just a marketplace." highlight={['ecosystem', 'marketplace']} />*/}
                     </Stack>
                 </Box>
             </Box>

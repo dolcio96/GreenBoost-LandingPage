@@ -1,0 +1,73 @@
+{
+    "IT": {
+        "hero": {
+            "title": "Offset Our Future.",
+            "description": "Il tuo partner di fiducia per la compensazione delle emissioni",
+            "buttonSubscribe": "Rimani Aggiornato"
+        },
+        "popUp": {
+            "title": "Rimani aggiornato, Iscriviti ora!",
+            "desc1": "Condividici la tua mail se sei interessato nel progetto",
+            "desc2": "Vorrei",
+            "descBuy": "Comprare",
+            "descSell": "Vendere",
+            "desc3": "Crediti di Carbonio Volontari",
+            "button":"Iscriviti ora"
+        },
+        "sellbuycreate": [
+             {
+                "title": "vendi",
+                "description": "Acquista Crediti certificati secondo i migliori standard"
+            },
+             {
+                "title": "compra",
+                "description": "Sviluppa nuove opportunità di mercato grazie ai Crediti di Carbonio"
+            },
+            {
+                "title": "crea",
+                "description": "Accellera il processo di certificazione del tuo progetto Carbon Removal"
+            }
+        ],
+        "wave": {
+            "wave1": {
+                "phrase1": "Unisciti a GreenBoost.",
+                "phrase2":"Compensa le tue emissioni tramite crediti di carbonio di alta qualità. Garantisci la rimozione di CO2 dall’atmosfera."
+            },
+            "wave2": {
+                "phrase1": "GreenBoost accompagna realtà nazionali ed internazionali nella realizzazione della strategia di compensazione di lungo periodo, fornendo un portafoglio di soluzioni in grado di soddisfare la necessità di raggiungere gli obbiettivi di decarbonizzazione."
+            },
+            "wave3": {
+                "phrase1": "Agiamo oggi per un domani migliore.",
+                "phrase2": "Compensiamo il nostro futuro, insieme."
+            },
+            "wave4":{
+                "phrase1":"GreenBoost non un semplice marketplace!"
+
+            }
+        },
+        "section": {
+            "section1": {
+                "title": "Carbon Removal",
+                "description": "Le nostre soluzioni di compensazione sono focalizzate su  certificati di Carbon Removal, capaci di rimuovere CO2 direttamente dall’atmosfera"
+            },
+            "section2": {
+                "title": "Il nostro differenziale: la qualità!",
+                "description": "I Progetti che puoi trovare su GreenBoost offrono una serie di vantaggi aggiuntivi, tra cui la produzione di energia ad impatto zero e una elevata durata dello stoccaggio della CO2 assorbita."
+            },
+            "section3": {
+                "title": "Affidabilità per un processo end-to-end",
+                "description": "Grazie alla rete di partner di cui GreenBoost dispone, siamo in grado di offrire soluzioni a 360°, dalla quantificazione delle emissioni alla creazione di portafogli personalizzati sulle tue esigenze."
+            }
+        },
+        "team":{"title":"La nostra squadra",
+                "components":{
+                    "arturo":{"name":"Arturo Sorgato","role":"CPO"},
+                    "enrico":{"name":"Enrico Martini","role":"CEO"},
+                    "tommaso":{"name":"Tommaso Marinelli","role":"CSO"},
+                    "andrea":{"name":"Andrea Corini","role":"COO"},
+                    "ludovico":{"name":"Ludovico Dolcini","role":"Web Design Architect"},
+                    "giovanni":{"name":"Giovanni Misso","role":"Backend Integration Specialist"}
+                }}
+    },
+    "EN": {}
+}

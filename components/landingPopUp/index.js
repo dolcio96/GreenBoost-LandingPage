@@ -36,9 +36,9 @@ import {
 } from '@chakra-ui/react';
 
 
-const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
+const LandingPopUp = ({popUpTexts, isOpen, onOpen, onClose }) => {
 
-
+console.log(popUpTexts);
 
     const router = useRouter();
     const {
@@ -86,11 +86,11 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
             />
             <ModalContent >
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <ModalHeader justifyContent={"center"} textAlign={"center"}>Stay Tuned, Subscribe Now!</ModalHeader>
+                    <ModalHeader justifyContent={"center"} textAlign={"center"}>{popUpTexts.title}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Stack direction={'column'} spacing={6}>
-                            <Center><Text>Send us your email if you are interested in the project</Text>  </Center>
+                            <Center><Text>{popUpTexts.desc1}</Text>  </Center>
                             <FormControl isRequired>
                                 <Input placeholder='Email' className="inputFieldNormal" type={"email"} {...register('email')} />
                             </FormControl>
@@ -100,15 +100,15 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
                             <FormControl isRequired>
                                 <Center>
                                     <Stack direction='row'>
-                                        <Text>I want to</Text>
+                                        <Text>{popUpTexts.desc2}</Text>
                                         <Controller
                                             render={({ field: { onChange, value } }) => (
 
                                                 <RadioGroup name='type' onChange={onChange} value={value}>
                                                     <Stack direction='row'>
 
-                                                        <Radio value='seller'>Sell</Radio>
-                                                        <Radio value='buyer'>Buy</Radio>
+                                                        <Radio value='seller'>{popUpTexts.descSell}</Radio>
+                                                        <Radio value='buyer'>{popUpTexts.descBuy}</Radio>
                                                     </Stack>
                                                 </RadioGroup>
 
@@ -116,9 +116,10 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
                                             name="type"
                                             control={control}
                                         />
-                                        <Text>Voluntary Carbon Credit</Text>
+                                        
                                     </Stack>
                                 </Center>
+                               <Center> <Text>{popUpTexts.desc3}</Text> </Center>
                             </FormControl>
 
 
@@ -129,7 +130,7 @@ const LandingPopUp = ({ isOpen, onOpen, onClose }) => {
                     <ModalFooter justifyContent={"center"}>
 
                         <Button variant={"normalButton"} mr={3} justifyContent={"center"} type='submit'>
-                            Subscribe Now
+                        {popUpTexts.button}
                         </Button>
 
                     </ModalFooter>

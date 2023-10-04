@@ -25,11 +25,7 @@ import leave from "@public/Images/icons/leave.svg"
 
 
 const MotionFlex = motion(Flex)
-const rows = {
-    row1: { title: "Easy and free access", description: "Access to the marketplace and offset your emissions in 3 easy clicks. We want to make our Marketplace accessible to everyone, in a very easy and autonomous way, with the will to make voluntary market grow as much as possible.", img: co2 },
-    row2: { title: "Carbon Credit supply gatherer", description: "Wanna certify your VCCs or start an offsetting project? Contact us and we’ll link you with our partners for certifications.", img: forest },
-    row3: { title: "Build our zero CO2 future", description: "Starting from the quantification and reduction of your emission to ESG compliance, thanks to our partners for building with you our balanced-emissions future.", img: footprint },
-}
+
 
 
 
@@ -93,8 +89,12 @@ const RowBoxRight = (info) => {
 }
 
 
-const Description = () => {
-
+const Description = ({sectionText}) => {
+const rows = {
+    row1: { title: sectionText.section1.title, description: sectionText.section1.description, img: co2 },
+    row2: { title: sectionText.section2.title, description: sectionText.section2.description, img: forest },
+    row3: { title: sectionText.section3.title, description: sectionText.section3.description, img: footprint },
+}
     const [dimension, setDimension] = useState(true);
     const MotionHeading = motion(Heading)
 

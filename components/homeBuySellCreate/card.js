@@ -31,7 +31,7 @@ import {
     Button,
 } from '@chakra-ui/react';
 
-const Card = (props) => {
+const Card = ({popUpTexts,props}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (<>
 
@@ -53,7 +53,7 @@ const Card = (props) => {
                         bg="white"
                         opacity={"0.9"}
                     />
-                    <Center h="80px">
+                    <Center h="110px">
                         <Box p="3" textAlign="center" >
                             <Center>
                                 <Text fontSize='2xl' color='quaternary'>{props.desc}</Text>
@@ -65,7 +65,7 @@ const Card = (props) => {
 
         </Flex>
 
-        <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
+        <LandingPopUp popUpTexts={popUpTexts} isOpen={isOpen} onOpen={onOpen} onClose={onClose}/>
 
     </>)
 

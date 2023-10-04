@@ -26,7 +26,7 @@ import { BiMailSend } from 'react-icons/bi';
 import { writefile } from '@lib/writeFile';
 
 import LandingPopUp from '@components/landingPopUp';
-
+import languageJSON from "@lib/language.json"
 
 
 const SocialButton = ({
@@ -69,6 +69,9 @@ const ListHeader = ({ children }) => {
 };
 
 const Footer = () => {
+  var language = languageJSON.IT;
+  var popUpTexts = language.popUp;
+  console.log(popUpTexts)
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (<>
     <Box
@@ -140,7 +143,7 @@ const Footer = () => {
         </SimpleGrid>
       </Container>
     </Box>
-    <LandingPopUp isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
+    <LandingPopUp  popUpTexts={popUpTexts} isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
   </>)
 
 }
