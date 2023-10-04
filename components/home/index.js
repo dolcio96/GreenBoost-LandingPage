@@ -71,9 +71,9 @@ const Home = () => {
                 </Box>
                 <Box bg={"primary"}>
                     <Stack spacing={5} py={20} px={5}>
-                    <Phrase  text={language.wave.wave2.phrase1} highlight={['strategia di compensazione','obbiettivi di decarbonizzazione']}/>
+                    <Phrase  text={language.wave.wave2.phrase1} highlight={['compensazione','decarbonizzazione']}/>
                     
-                       { /*<Phrase  text='Greenboost will help you offsetting emissions of the processes that are most difficult to decarbonize, with a verifiable product that guarantees CO2 removal from the atmosphere.' highlight={['']} />*/}
+                       { /*<Phrase  text='Greenboost will help you offsetting emissions of the processes that are most difficult to decarbonize, with a verifiable product that guarantees CO2 removal from the atmosphere.' highlight={['']} /> */}
                     </Stack>
                 </Box>
                 <WaveComp />
