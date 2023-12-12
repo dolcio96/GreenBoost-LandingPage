@@ -52,6 +52,7 @@ const Hero = ({heroTexts, popUpTexts}) => {
     <Flex backgroundImage={BGImage}
       backgroundRepeat={"no-repeat"}
       backgroundSize={{ xl: "120%" }}
+      backgroundPosition= {"center"}
       h='100vh'
     >
 
