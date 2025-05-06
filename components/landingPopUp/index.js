@@ -52,6 +52,7 @@ console.log(popUpTexts);
 
     function onSubmit(subscriber) {
 
+       
         fetch('/?email=' + subscriber.email + 'ferret&type=' + subscriber.type, {
             method: "GET",
         }).then(() => {

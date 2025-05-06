@@ -38,9 +38,7 @@ const Team = ({teamTexts}) => {
         ludovico: { nome: teamTexts.components.ludovico.name, role: teamTexts.components.ludovico.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/ldolcini/", img: LudovicoAvatar },
         giovanni: { nome: teamTexts.components.giovanni.name, role: teamTexts.components.giovanni.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/giovannimisso/", img: GiovanniAvatar },
         arturo: { nome: teamTexts.components.arturo.name, role: teamTexts.components.arturo.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/arturo-sorgato-555b05215/", img: ArturoAvatar },
-        tommaso: { nome: teamTexts.components.tommaso.name, role: teamTexts.components.tommaso.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/tommaso-marinelli1/", img: TommasoAvatar },
         enrico: { nome: teamTexts.components.enrico.name, role: teamTexts.components.enrico.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/enrico-martini-070696/", img: EnricoAvatar },
-        andrea: { nome: teamTexts.components.andrea.name, role: teamTexts.components.andrea.role, desc: "descrizione", linkedin: "https://www.linkedin.com/in/andrea-corini-131634129/", img: AndreaAvatar },
     }
     const MotionHeading = motion(Heading)
     return (
@@ -63,8 +61,6 @@ const Team = ({teamTexts}) => {
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={10}>
                     <TeamCard info={team.enrico} />
                     <TeamCard info={team.arturo} />
-                    <TeamCard info={team.tommaso} />
-                    <TeamCard info={team.andrea} />
                     <TeamCard info={team.ludovico} />
                     <TeamCard info={team.giovanni} />
                 </SimpleGrid>
