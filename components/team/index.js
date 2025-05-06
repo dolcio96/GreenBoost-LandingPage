@@ -58,7 +58,7 @@ const Team = ({teamTexts}) => {
                 </MotionHeading>
                 {/*<Bubbles />*/}
 
-                <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={10}>
+                <SimpleGrid columns={{ base: 1, sm: 2}} spacing={10}>
                     <TeamCard info={team.enrico} />
                     <TeamCard info={team.arturo} />
                     <TeamCard info={team.ludovico} />
